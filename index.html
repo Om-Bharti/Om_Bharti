@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om Bharti · digital portfolio</title>
+  <!-- modern light theme & UI library: Tailwind CSS + subtle custom style -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome 6 (free) for crisp icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- smooth behaviour & extra polish -->
+  <style>
+    * { scroll-behavior: smooth; }
+    body { background: #f9fafc; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .card-hover { transition: all 0.2s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02); }
+    .badge-skill { background: #eff6ff; color: #1e4a7a; padding: 0.25rem 1rem; border-radius: 30px; font-size: 0.8rem; font-weight: 500; }
+    .section-divider { border-bottom: 2px solid #e2e8f0; margin: 1.5rem 0; width: 100%; }
+    .print-friendly a { color: #2563eb; }
+    /* custom timeline marker for projects/experience */
+    .timeline-marker { background: white; border: 2px solid #b1c5e0; }
+  </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+  <!-- minimalist header / navigation (inspired by reference clean layout) -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900">Om Bharti</h1>
+        <div class="flex flex-wrap items-center gap-4 mt-2 text-gray-600 text-base">
+          <span class="flex items-center gap-1"><i class="far fa-envelope text-blue-500 w-4"></i> <a href="mailto:ombharti323@gmail.com" class="hover:underline">ombharti323@gmail.com</a></span>
+          <span class="flex items-center gap-1"><i class="fas fa-phone-alt text-blue-500 w-4"></i> +91 93130 03086</span>
+          <span class="flex items-center gap-1"><i class="fab fa-linkedin text-blue-600"></i> <a href="#" class="hover:underline">linkedin.com/in/Om-Bharti</a></span>
+          <span class="flex items-center gap-1"><i class="fab fa-github text-gray-800"></i> <a href="#" class="hover:underline">github.com/Om-Bharti</a></span>
+        </div>
+      </div>
+      <!-- subtle tag / year -->
+      <div class="bg-blue-50 rounded-full px-4 py-2 text-sm text-blue-800 font-medium shadow-sm">
+        <i class="fas fa-calendar-alt mr-1"></i> 2023 – Present
+      </div>
+    </div>
+  </div>
+
+  <!-- main portfolio grid (2 columns on large, but fluid) -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- EDUCATION CARD (full width) + SKILLS row flex -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+      <!-- left wide card: Education + GPA + coursework -->
+      <div class="lg:col-span-2 bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 p-6 card-hover">
+        <div class="flex items-center gap-2 mb-4">
+          <i class="fas fa-graduation-cap text-2xl text-blue-600"></i>
+          <h2 class="text-xl font-semibold text-gray-800">Education</h2>
+        </div>
+        <div class="flex flex-wrap items-start justify-between gap-2">
+          <div>
+            <h3 class="font-medium text-lg">Pandit Deendayal Energy University</h3>
+            <p class="text-gray-600">B.Tech, Electronics and Communication <span class="text-sm ml-2 text-gray-500">2023 – Present</span></p>
+          </div>
+          <div class="bg-blue-100 text-blue-800 font-semibold px-4 py-1.5 rounded-full text-sm">GPA: 8.18/10.0</div>
+        </div>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm text-gray-700">Signals & Systems</span>
+          <span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">Digital Signal Processing</span>
+          <span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">Wireless Comm.</span>
+          <span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">Embedded Systems</span>
+          <span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">Analog & Digital Elec.</span>
+        </div>
+      </div>
+
+      <!-- compact skills overview (right) with pill style -->
+      <div class="bg-white/80 rounded-2xl shadow-sm border border-gray-100 p-6 card-hover">
+        <div class="flex items-center gap-2 mb-3">
+          <i class="fas fa-microchip text-2xl text-indigo-600"></i>
+          <h2 class="text-xl font-semibold">Core skills</h2>
+        </div>
+        <div class="space-y-3">
+          <div><span class="text-xs uppercase tracking-wider text-gray-500 font-bold">Embedded</span> <span class="ml-2 text-sm">ATmega, ESP32, RPi, FreeRTOS, I2C/UART</span></div>
+          <div><span class="text-xs uppercase tracking-wider text-gray-500 font-bold">Signal Proc.</span> <span class="ml-2 text-sm">Q15, FIR filters, real‑time, cycle opt.</span></div>
+          <div><span class="text-xs uppercase tracking-wider text-gray-500 font-bold">Wireless</span> <span class="ml-2 text-sm">LoRa, Wi‑Fi, TLS, REST, RF</span></div>
+          <div class="flex flex-wrap gap-1 pt-1">
+            <span class="badge-skill">ESP-IDF</span><span class="badge-skill">avr-gcc</span><span class="badge-skill">PlatformIO</span><span class="badge-skill">MATLAB</span><span class="badge-skill">Python</span><span class="badge-skill">Git</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESEARCH EXPERIENCE (two cards side by side) -->
+    <h2 class="text-2xl font-semibold mt-8 mb-4 flex items-center gap-2"><i class="fas fa-flask text-blue-500"></i> Research experience</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- card 1: FSO & THz -->
+      <div class="bg-white rounded-xl border border-gray-100 p-6 shadow-sm card-hover">
+        <div class="flex items-start justify-between">
+          <h3 class="font-semibold text-lg">FSO & THz Wireless Communication</h3>
+          <span class="bg-gray-100 text-xs px-3 py-1 rounded-full">2025 – present</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">supervisor: Dr. N. Vishwakarma</p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-700 list-disc pl-5">
+          <li>Performance analysis of FSO/THz under atmospheric impairments.</li>
+          <li>Modeling channel behaviour, BER, SNR, ergodic capacity.</li>
+        </ul>
+      </div>
+      <!-- card 2: TFET Biosensor -->
+      <div class="bg-white rounded-xl border border-gray-100 p-6 shadow-sm card-hover">
+        <div class="flex items-start justify-between">
+          <h3 class="font-semibold text-lg">Vertical TFET Biosensor Simulation</h3>
+          <span class="bg-gray-100 text-xs px-3 py-1 rounded-full">2025 – present</span>
+        </div>
+        <p class="text-sm text-gray-500 mt-1">supervisor: Dr. Abhishek Ray</p>
+        <ul class="mt-4 space-y-2 text-sm text-gray-700 list-disc pl-5">
+          <li>Silvaco TCAD simulation, I<sub>D</sub>-V<sub>G</sub> analysis.</li>
+          <li>Cutline analysis: potential, carrier concentration, sensitivity.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROJECTS section (featured) + embedded links to github -->
+    <h2 class="text-2xl font-semibold mt-10 mb-4 flex items-center gap-2"><i class="fas fa-code-branch text-blue-500"></i> Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- project 1: Military Pager System -->
+      <div class="bg-white rounded-xl border p-5 flex flex-col card-hover">
+        <div class="flex items-center justify-between">
+          <i class="fas fa-satellite-dish text-xl text-blue-600"></i>
+          <span class="bg-green-100 text-xs font-mono px-2 py-0.5 rounded">LoRa · ESP32</span>
+        </div>
+        <h3 class="font-semibold text-base mt-3">Military Pager System</h3>
+        <p class="text-sm text-gray-600 mt-1 flex-1">Infrastructure‑free pager using ESP32 + 433 MHz LoRa. Multi‑km LOS, RSSI/SVR monitoring.</p>
+        <a href="#" class="inline-flex items-center gap-1 text-sm text-blue-700 mt-3 hover:underline"><i class="fab fa-github"></i> GitHub </a>
+      </div>
+      <!-- project 2: GroqShell on ESP32-S3 -->
+      <div class="bg-white rounded-xl border p-5 flex flex-col card-hover">
+        <div class="flex items-center justify-between">
+          <i class="fas fa-terminal text-xl text-indigo-600"></i>
+          <span class="bg-purple-100 text-xs px-2 py-0.5 rounded">AI · LLM</span>
+        </div>
+        <h3 class="font-semibold text-base mt-3">GroqShell on ESP32‑S3</h3>
+        <p class="text-sm text-gray-600 flex-1">UART AI shell with LLaMA 3.1 via Groq API, TLS, cJSON, FreeRTOS. ~hundreds ms latency.</p>
+        <a href="#" class="inline-flex items-center gap-1 text-sm text-blue-700 mt-3 hover:underline"><i class="fab fa-github"></i> GitHub </a>
+      </div>
+      <!-- project 3: Cycle-Accurate DSP Engine ATmega2560 -->
+      <div class="bg-white rounded-xl border p-5 flex flex-col card-hover">
+        <div class="flex items-center justify-between">
+          <i class="fas fa-wave-square text-xl text-amber-600"></i>
+          <span class="bg-amber-100 text-xs px-2 py-0.5 rounded">Q15 · bare metal</span>
+        </div>
+        <h3 class="font-semibold text-base mt-3">Fixed‑point DSP Engine</h3>
+        <p class="text-sm text-gray-600 flex-1">8‑tap FIR on 8‑bit ATmega2560, timer ADC, Q15, cycle‑count optimised, UART streaming.</p>
+        <a href="#" class="inline-flex items-center gap-1 text-sm text-blue-700 mt-3 hover:underline"><i class="fab fa-github"></i> GitHub </a>
+      </div>
+    </div>
+
+    <!-- additional project (full width card for DSP maybe already there, but we show it) 
+         but we also have the second page "Cycle-Accurate Fixed-Point DSP Engine" duplicate? 
+         I'll integrate as extra row compact -->
+    <div class="mt-4 bg-blue-50/40 rounded-xl p-4 border border-blue-100 flex flex-wrap items-center gap-3">
+      <i class="fas fa-microchip text-blue-600 text-xl"></i>
+      <span class="font-medium">Cycle‑accurate DSP engine on ATmega2560</span>
+      <span class="text-sm text-gray-700">8‑tap FIR, Q15, bare‑metal toolchain, verified with UART.</span>
+      <a href="#" class="ml-auto text-blue-600 text-sm"><i class="fab fa-github mr-1"></i>code</a>
+    </div>
+
+    <!-- EXPERIENCE + LEADERSHIP combined grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+      <!-- left column: experience (NGO internship) -->
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 flex gap-2"><i class="fas fa-briefcase text-blue-500"></i> Experience</h2>
+        <div class="bg-white rounded-xl border p-5 card-hover">
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold">Rotary Physiotherapy Center (NGO)</h3>
+            <span class="text-sm text-gray-500">May–June 2024</span>
+          </div>
+          <p class="text-sm text-gray-600 mt-1">Intern · research & documentation on medical devices, accessibility challenges.</p>
+        </div>
+      </div>
+      <!-- right column: leadership & activities -->
+      <div>
+        <h2 class="text-2xl font-semibold mb-3 flex gap-2"><i class="fas fa-crown text-amber-500"></i> Leadership</h2>
+        <div class="bg-white rounded-xl border p-5 space-y-3 card-hover">
+          <div><span class="font-medium block">Graphic Design Head · Avionics Aeromodelling Club</span>
+            <span class="text-xs text-gray-500">Led ornithopter team, RC fixed‑wing, 5G drone demo.</span>
+          </div>
+          <div><span class="font-medium block">Graphic Design Head · The Inspired Room</span>
+            <span class="text-xs text-gray-500">Branding, posters, visual identity for architecture club.</span>
+          </div>
+          <div><span class="font-medium block">Core Member · Sports Committee</span>
+            <span class="text-xs text-gray-500">event organisation, inter‑college coordination.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS + VOLUNTEER / WORKSHOPS two column -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+      <!-- certifications left -->
+      <div>
+        <h2 class="text-xl font-semibold mb-3 flex gap-2"><i class="fas fa-certificate text-emerald-600"></i> Certifications</h2>
+        <div class="bg-white rounded-xl border divide-y divide-gray-100">
+          <div class="p-4 flex justify-between items-center"><span><i class="fas fa-star text-yellow-400 mr-2"></i>Understanding Incubation & Entrepreneurship – NPTEL (IIT Bombay) </span><span class="text-sm bg-emerald-100 px-3 py-1 rounded-full">99/100</span></div>
+          <div class="p-4">✈️ Hands‑on Drone Technology (May 2025) – UAV subsystems, flight control</div>
+          <div class="p-4">📶 IoT & Machine Learning Workshop (Jan 2025) – IEEE CS, PDEU</div>
+        </div>
+      </div>
+      <!-- volunteer & plasma etc -->
+      <div>
+        <h2 class="text-xl font-semibold mb-3 flex gap-2"><i class="fas fa-hands-helping text-indigo-500"></i> Volunteer</h2>
+        <div class="bg-white rounded-xl border p-5">
+          <div class="flex items-start gap-3">
+            <i class="fas fa-plasma text-purple-500 text-xl"></i>
+            <div>
+              <span class="font-medium">39th National Symposium PLASMA 2024</span>
+              <p class="text-sm text-gray-600 mt-1">Coordinator for 500+ participants, presented projects, met Shri K. N. Vyas.</p>
+            </div>
+          </div>
+        </div>
+        <!-- add small note workshop from first page? already in certs, but also Plasma -->
+        <div class="mt-3 bg-gray-50 p-3 rounded-xl text-sm flex gap-2 items-center text-gray-700">
+          <i class="fas fa-microchip text-gray-500"></i> 5G drone / satellite internet demo (club tech presentation)
+        </div>
+      </div>
+    </div>
+
+    <!-- inline skill cloud from "Skills" detailed list -->
+    <div class="mt-10 bg-white/70 rounded-2xl border border-gray-200 p-6">
+      <div class="flex items-center gap-2 text-lg font-semibold mb-3"><i class="fas fa-cogs text-gray-700"></i> Deep expertise</div>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">ATmega2560</span><span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">ESP32-S3</span>
+        <span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">FreeRTOS</span><span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">UART/SPI/I2C</span>
+        <span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">FIR Q15</span><span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">LoRa 433MHz</span>
+        <span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">ESP-IDF</span><span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">avr-gcc</span>
+        <span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">MATLAB/Simulink</span><span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">Silvaco TCAD</span>
+        <span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">GNU Radio</span><span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">Python/cJSON</span>
+        <span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">Git</span><span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">Proteus</span><span class="bg-gray-100 px-3 py-1.5 rounded-full text-sm">SolidWorks</span>
+      </div>
+    </div>
+
+    <!-- tiny footer with reference & update -->
+    <div class="border-t border-gray-200 mt-12 pt-6 text-xs text-gray-500 flex justify-between items-center">
+      <span>© Om Bharti · built with Tailwind & modern light theme · ref: huda147/digital_portfolio</span>
+      <span class="flex gap-3"><i class="far fa-envelope"></i> <i class="fab fa-github"></i> <i class="fab fa-linkedin"></i></span>
+    </div>
+  </div>
+
+  <!-- optional subtle background effect -->
+  <div class="fixed top-0 left-0 -z-10 w-full h-full bg-[#fbfdff]"></div>
+</body>
+</html>
