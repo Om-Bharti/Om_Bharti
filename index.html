@@ -155,16 +155,20 @@
       box-shadow: 0 30px 40px -20px #000, 0 0 30px #3b82f6;
       transition: box-shadow 0.3s;
     }
-    .profile-cine:hover {
-      box-shadow: 0 30px 50px -10px #3b82f6, 0 0 40px #3b82f6;
-    }
-    .profile-cine img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #0f172a;
-    }
+    .profile-cine{
+width:220px;
+height:220px;
+border-radius:50%;
+border:3px solid #3b82f6;
+overflow:hidden;
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
+}
+
+.profile-cine img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
 
     /* diagram placeholder with animation */
     .diagram-placeholder {
@@ -294,10 +298,9 @@
   <section class="min-h-screen flex items-center justify-center relative px-6 pt-20">
     <div class="section-container text-center">
       <div class="flex justify-center mb-8 fade-in">
-        <div class="profile-cine">
-          <!-- replace with photo.jpg (use a reliable placeholder if missing) -->
-          <img src="https://ui-avatars.com/api/?name=Om+Bharti&size=140&length=2&background=1e3b5a&color=fff&bold=true&font-size=0.45&rounded=true" alt="Om Bharti">
-        </div>
+      <div class="profile-cine">
+        <img src="photo.jpg" alt="Om Bharti">
+      </div>
       </div>
       <h1 class="text-7xl md:text-8xl font-black mb-6 fade-in" style="animation-delay: 0.1s; background: linear-gradient(145deg, #fff, #9bbaff, #6090ff); -webkit-background-clip:text; background-clip:text; color:transparent;">Om Bharti</h1>
       <p class="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto leading-relaxed fade-in" style="animation-delay: 0.2s;">
