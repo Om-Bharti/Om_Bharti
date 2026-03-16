@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Om Bharti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Om Bharti · embedded systems engineer</title>
   <!-- fonts & icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -22,33 +22,84 @@
       color: #edf2f7;
       line-height: 1.6;
       scroll-behavior: smooth;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.4s ease, color 0.3s ease;
     }
 
-    /* Light theme variables */
+    /* ===== LIGHT THEME — completely redesigned for elegance & readability ===== */
     body.light-theme {
-      background: #f5f9ff;
-      color: #1a2639;
+      background: #f8fafd;
+      color: #1a2b3e;
     }
     
     body.light-theme .lab-card {
-      background: rgba(255, 255, 255, 0.8);
-      border-color: rgba(0, 100, 255, 0.3);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 110, 255, 0.25);
+      box-shadow: 0 25px 50px -15px rgba(0,60,130,0.2), 0 0 0 1px rgba(255,255,255,0.7) inset;
+    }
+    
+    body.light-theme .lab-card:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 35px 60px -20px #3b82f6, 0 0 0 1.5px #3b82f6 inset;
     }
     
     body.light-theme .chip-eng {
-      background: #e5edf5;
-      border-color: #b0c8e0;
-      color: #1e3a5f;
+      background: #e5f0ff;
+      border: 1px solid #b8d1ff;
+      color: #0f3a6b;
+    }
+    
+    body.light-theme .chip-eng:hover {
+      background: #d4e5ff;
+      border-color: #3b82f6;
+      color: #0a2a4a;
     }
     
     body.light-theme .nav-link {
       color: #2c3e50;
     }
     
+    body.light-theme .nav-link:hover {
+      color: #0a2a4a;
+      border-bottom-color: #3b82f6;
+    }
+    
     body.light-theme .diagram-placeholder {
-      background: #eef2f8;
+      background: #ffffff;
+      border: 1px dashed #3b82f6;
+      color: #1e3a5f;
+      box-shadow: 0 5px 15px rgba(0,60,130,0.05);
+    }
+    
+    body.light-theme .tech-grid-bg {
+      background-image: 
+        linear-gradient(rgba(0, 80, 200, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 80, 200, 0.08) 1px, transparent 1px);
+    }
+    
+    body.light-theme .glow-1 {
+      background: radial-gradient(circle, rgba(0, 120, 255, 0.15) 0%, transparent 65%);
+    }
+    body.light-theme .glow-2 {
+      background: radial-gradient(circle, rgba(90, 70, 255, 0.12) 0%, transparent 70%);
+    }
+    
+    body.light-theme .text-gray-300 {
       color: #2c3e50;
+    }
+    
+    body.light-theme .text-gray-400 {
+      color: #4a5b6e;
+    }
+    
+    body.light-theme .bg-\[\#1a2634\] {
+      background-color: #e5f0ff;
+      border-color: #b8d1ff;
+      color: #0f3a6b;
+    }
+    
+    body.light-theme .meter-bar {
+      background: #d9e4f0;
     }
 
     h1, h2, h3 {
@@ -60,20 +111,14 @@
     /* technical blueprint grid background */
     .tech-grid-bg {
       background-image: 
-        linear-gradient(rgba(0, 180, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 180, 255, 0.08) 1px, transparent 1px);
+        linear-gradient(rgba(0, 180, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 180, 255, 0.06) 1px, transparent 1px);
       background-size: 50px 50px;
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       z-index: -3;
       pointer-events: none;
       transition: opacity 0.3s;
-    }
-    
-    body.light-theme .tech-grid-bg {
-      background-image: 
-        linear-gradient(rgba(0, 100, 200, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 100, 200, 0.1) 1px, transparent 1px);
     }
 
     /* floating glow layers */
@@ -91,13 +136,6 @@
       width: 80vmax; height: 80vmax;
       background: radial-gradient(circle, rgba(100,80,255,0.08) 0%, transparent 65%);
       z-index: -2;
-    }
-    
-    body.light-theme .glow-1 {
-      background: radial-gradient(circle, rgba(0,150,255,0.25) 0%, transparent 60%);
-    }
-    body.light-theme .glow-2 {
-      background: radial-gradient(circle, rgba(100,80,255,0.2) 0%, transparent 65%);
     }
 
     /* card style – lab dashboard */
@@ -144,33 +182,26 @@
       margin: 1rem 0 2rem 0;
     }
 
-    /* profile ring cinematic */
+    /* profile ring */
     .profile-cine {
-      width: 140px;
-      height: 140px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
-      padding: 5px;
-      background: linear-gradient(145deg, #1e3b5a, #0e1a2a);
-      border: 2px solid #3b82f6;
-      box-shadow: 0 30px 40px -20px #000, 0 0 30px #3b82f6;
+      border: 3px solid #3b82f6;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
       transition: box-shadow 0.3s;
     }
-    .profile-cine{
-width:220px;
-height:220px;
-border-radius:50%;
-border:3px solid #3b82f6;
-overflow:hidden;
-box-shadow:0 20px 40px rgba(0,0,0,0.6);
-}
+    .profile-cine:hover {
+      box-shadow: 0 25px 50px #3b82f6;
+    }
+    .profile-cine img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.profile-cine img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-    /* diagram placeholder with animation */
+    /* diagram placeholder */
     .diagram-placeholder {
       background: #101a28;
       border-radius: 2rem;
@@ -204,7 +235,7 @@ object-fit:cover;
       100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
     }
 
-    /* futuristic dashboard meters */
+    /* dashboard meters */
     .meter-bar {
       height: 8px;
       background: #1f2b3a;
@@ -219,7 +250,7 @@ object-fit:cover;
       transition: width 0.5s ease-out;
     }
 
-    /* navigation style */
+    /* navigation */
     .nav-link {
       color: #b0c8e0;
       font-weight: 500;
@@ -233,7 +264,7 @@ object-fit:cover;
     }
     
     body.light-theme .nav-link:hover {
-      color: #1e3a5f;
+      color: #0a2a4a;
     }
 
     /* theme toggle */
@@ -248,6 +279,11 @@ object-fit:cover;
     .theme-toggle:hover {
       border-color: #3b82f6;
     }
+    
+    body.light-theme .theme-toggle {
+      background: #e5f0ff;
+      border-color: #b8d1ff;
+    }
 
     /* container */
     .section-container {
@@ -256,9 +292,31 @@ object-fit:cover;
       padding: 5rem 2rem;
     }
 
-    /* responsive */
-    @media (max-width: 640px) {
-      .section-container { padding: 3rem 1.5rem; }
+    /* ===== FULLY RESPONSIVE MOBILE FIXES ===== */
+    @media (max-width: 768px) {
+      .section-container { padding: 3rem 1.2rem; }
+      
+      h1.text-7xl { font-size: 3.5rem; }
+      h2.text-5xl { font-size: 2.8rem; }
+      
+      .profile-cine { width: 180px; height: 180px; }
+      
+      .grid { gap: 1.5rem; }
+      
+      .lab-card { border-radius: 2rem; }
+      
+      nav { padding: 0.8rem 1rem; }
+      nav .flex.gap-8 { gap: 1rem; }
+      nav .text-sm { font-size: 0.75rem; }
+      
+      .theme-toggle { padding: 0.3rem 0.8rem; }
+    }
+    
+    @media (max-width: 480px) {
+      nav .flex.gap-8 { gap: 0.6rem; }
+      nav .text-sm { font-size: 0.7rem; }
+      .profile-cine { width: 150px; height: 150px; }
+      h1.text-7xl { font-size: 2.8rem; }
     }
 
     /* fade-in animation */
@@ -278,56 +336,65 @@ object-fit:cover;
   <div class="glow-1"></div>
   <div class="glow-2"></div>
 
-  <!-- navigation with theme toggle -->
-  <nav class="fixed top-0 left-0 w-full z-50 bg-[#0b0e14]/70 backdrop-blur-md border-b border-[#1e2a3a] px-8 py-4 flex justify-between items-center">
-    <span class="text-2xl font-bold" style="background: linear-gradient(145deg,#fff,#6ea5ff); -webkit-background-clip:text; background-clip:text; color:transparent;">Om Bharti</span>
-    <div class="flex gap-8 text-sm items-center">
+  <!-- navigation with theme toggle (fully responsive) -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-[#0b0e14]/80 backdrop-blur-md border-b border-[#1e2a3a] px-4 md:px-8 py-3 flex flex-wrap items-center justify-between">
+    <span class="text-xl md:text-2xl font-bold" style="background: linear-gradient(145deg,#fff,#6ea5ff); -webkit-background-clip:text; background-clip:text; color:transparent;">Om Bharti</span>
+    <div class="flex items-center gap-3 md:gap-8 text-xs md:text-sm">
       <a href="#origin" class="nav-link">Origin</a>
       <a href="#work" class="nav-link">Work</a>
       <a href="#research" class="nav-link">Research</a>
       <a href="#toolkit" class="nav-link">Toolkit</a>
       <a href="#future" class="nav-link">Future</a>
-      <div class="theme-toggle ml-4" onclick="toggleTheme()">
+      <div class="theme-toggle ml-1 md:ml-4" onclick="toggleTheme()">
         <i class="fas fa-sun" style="color: #fbbf24; display: none;"></i>
         <i class="fas fa-moon" style="color: #3b82f6;"></i>
       </div>
     </div>
   </nav>
 
-  <!-- 1. HERO – THE ENGINEER (cinematic) -->
-  <section class="min-h-screen flex items-center justify-center relative px-6 pt-20">
+  <!-- 1. HERO – THE ENGINEER -->
+  <section class="min-h-screen flex items-center justify-center relative px-4 pt-16">
     <div class="section-container text-center">
-      <div class="flex justify-center mb-8 fade-in">
-      <div class="profile-cine">
-        <img src="photo.jpg" alt="Om Bharti">
+      <div class="flex justify-center mb-6 fade-in">
+        <div class="profile-cine">
+          <img src="photo.jpg" alt="Om Bharti" onerror="this.src='https://ui-avatars.com/api/?name=Om+Bharti&size=220&length=2&background=1e3b5a&color=fff&bold=true'">
+        </div>
       </div>
-      </div>
-      <h1 class="text-7xl md:text-8xl font-black mb-6 fade-in" style="animation-delay: 0.1s; background: linear-gradient(145deg, #fff, #9bbaff, #6090ff); -webkit-background-clip:text; background-clip:text; color:transparent;">Om Bharti</h1>
-      <p class="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto leading-relaxed fade-in" style="animation-delay: 0.2s;">
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-4 fade-in" style="animation-delay: 0.1s; background: linear-gradient(145deg, #fff, #9bbaff, #6090ff); -webkit-background-clip:text; background-clip:text; color:transparent;">Om Bharti</h1>
+      
+      <!-- COLLEGE & CGPA — explicitly added as requested -->
+      <p class="text-xl md:text-2xl text-blue-300 font-semibold mb-2 fade-in" style="animation-delay: 0.15s;">
+        Pandit Deendayal Energy University · B.Tech ECE
+      </p>
+      <p class="text-lg md:text-xl text-gray-300 mb-4 fade-in" style="animation-delay: 0.17s;">
+        CGPA: 8.18/10.0
+      </p>
+      
+      <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed fade-in" style="animation-delay: 0.2s;">
         I build embedded systems, DSP engines, and next‑generation wireless networks.
       </p>
-      <div class="flex gap-6 justify-center mt-12 fade-in" style="animation-delay: 0.3s;">
-        <a href="https://github.com/Om-Bharti" class="bg-[#1a2634] px-8 py-4 rounded-full border border-[#334155] hover:border-blue-500 flex items-center gap-3 text-lg transition-all hover:scale-105"><i class="fab fa-github text-2xl"></i> GitHub</a>
-        <a href="https://linkedin.com/in/om-bharti-/" class="bg-[#1a2634] px-8 py-4 rounded-full border border-[#334155] hover:border-blue-500 flex items-center gap-3 text-lg transition-all hover:scale-105"><i class="fab fa-linkedin text-2xl text-blue-400"></i> LinkedIn</a>
+      <div class="flex flex-wrap gap-4 justify-center mt-8 fade-in" style="animation-delay: 0.3s;">
+        <a href="https://github.com/Om-Bharti" class="bg-[#1a2634] px-6 md:px-8 py-3 md:py-4 rounded-full border border-[#334155] hover:border-blue-500 flex items-center gap-2 md:gap-3 text-base md:text-lg transition-all hover:scale-105"><i class="fab fa-github text-xl md:text-2xl"></i> GitHub</a>
+        <a href="https://linkedin.com/in/om-bharti-/" class="bg-[#1a2634] px-6 md:px-8 py-3 md:py-4 rounded-full border border-[#334155] hover:border-blue-500 flex items-center gap-2 md:gap-3 text-base md:text-lg transition-all hover:scale-105"><i class="fab fa-linkedin text-xl md:text-2xl text-blue-400"></i> LinkedIn</a>
       </div>
-      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
+      <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
         <i class="fas fa-chevron-down"></i>
       </div>
     </div>
   </section>
 
-  <!-- 2. ORIGIN STORY (first person, job-focused) -->
+  <!-- 2. ORIGIN STORY -->
   <section id="origin" class="section-container">
-    <div class="lab-card p-10 md:p-14 max-w-5xl mx-auto">
-      <h2 class="text-5xl font-bold text-white mb-3">My journey</h2>
+    <div class="lab-card p-8 md:p-14 max-w-5xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">My journey</h2>
       <div class="tech-line"></div>
-      <p class="text-xl text-gray-300 leading-relaxed">
+      <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
         I'm Om Bharti, an embedded systems engineer driven by the challenge of making hardware intelligent. My curiosity started with a simple radio kit and exploded into a passion for signal processing and semiconductor physics. I've spent the last two years building real-time DSP engines on 8-bit microcontrollers, designing LoRa-based communication systems that work where cellular fails, and simulating next-generation TFET biosensors. 
       </p>
-      <p class="text-xl text-gray-300 leading-relaxed mt-6">
+      <p class="text-lg md:text-xl text-gray-300 leading-relaxed mt-6">
         I'm now seeking internship and full-time opportunities where I can apply my expertise in embedded firmware, wireless systems, and semiconductor device engineering to build products that matter. I believe in clean code, cycle-accurate optimization, and systems that just work.
       </p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8">
         <div class="text-center"><span class="chip-eng">Embedded firmware</span></div>
         <div class="text-center"><span class="chip-eng">DSP specialist</span></div>
         <div class="text-center"><span class="chip-eng">Wireless systems</span></div>
@@ -336,59 +403,51 @@ object-fit:cover;
     </div>
   </section>
 
-  <!-- 3. ENGINEERING WORK (enhanced case studies) -->
+  <!-- 3. ENGINEERING WORK -->
   <section id="work" class="section-container">
-    <h2 class="text-5xl font-bold text-white mb-3">Featured work</h2>
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">Featured work</h2>
     <div class="tech-line"></div>
-    <div class="grid lg:grid-cols-3 gap-8 mt-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8">
       <!-- Military Pager -->
-      <div class="lab-card p-7 flex flex-col hover:scale-105 transition-all duration-300">
-        <div class="flex items-center gap-2 text-blue-400 text-2xl"><i class="fas fa-satellite-dish"></i><span class="chip-eng">ESP32 + LoRa</span></div>
-        <h3 class="text-3xl font-bold mt-4 text-white">Military Pager System</h3>
-        <p class="text-sm text-gray-400 mt-2"><span class="font-semibold text-white">The challenge:</span> Reliable communication without cellular or satellite infrastructure.</p>
-        <p class="text-sm text-gray-300 mt-1"><span class="font-semibold text-white">My approach:</span> I built a LoRa mesh network with ESP32 nodes, implementing duty-cycled reception for battery life and AES encryption for security. The base station aggregates messages and monitors link quality via RSSI/SNR.</p>
-        <!-- architecture diagram placeholder with animation -->
-        <div class="diagram-placeholder my-4 text-sm relative overflow-hidden">
-          <span>📡 Node ⇄ Base Station (multi‑km LOS)</span>
-          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/10 to-transparent animate-pulse"></div>
-        </div>
-        <p class="text-sm text-gray-300"><span class="font-semibold">Technologies:</span> ESP32, 433MHz LoRa, FreeRTOS, AES</p>
-        <p class="text-sm text-gray-300 mt-2"><span class="font-semibold">Results:</span> Achieved 5km range, 0.5s latency, 6 months battery life on 18650 cells. Successfully tested in remote mountain terrain.</p>
-        <div class="mt-4 flex gap-2">
-          <span class="chip-eng">Case study</span>
-          <span class="chip-eng">GitHub</span>
+      <div class="lab-card p-6 flex flex-col hover:scale-105 transition-all duration-300">
+        <div class="flex items-center gap-2 text-blue-400 text-xl md:text-2xl"><i class="fas fa-satellite-dish"></i><span class="chip-eng">ESP32 + LoRa</span></div>
+        <h3 class="text-2xl md:text-3xl font-bold mt-3 text-white">Military Pager</h3>
+        <p class="text-xs md:text-sm text-gray-400 mt-2"><span class="font-semibold text-white">Challenge:</span> Reliable communication without cellular.</p>
+        <p class="text-xs md:text-sm text-gray-300 mt-1"><span class="font-semibold text-white">Approach:</span> LoRa mesh with duty-cycled reception, AES.</p>
+        <div class="diagram-placeholder my-3 text-xs md:text-sm p-4">📡 Node ⇄ Base Station (multi‑km LOS)</div>
+        <p class="text-xs md:text-sm text-gray-300"><span class="font-semibold">Tech:</span> ESP32, LoRa, FreeRTOS, AES</p>
+        <p class="text-xs md:text-sm text-gray-300 mt-2"><span class="font-semibold">Results:</span> 5km range, 0.5s latency, 6mo battery.</p>
+        <div class="mt-3 flex gap-2 flex-wrap">
+          <span class="chip-eng text-xs">Case study</span>
+          <span class="chip-eng text-xs">GitHub</span>
         </div>
       </div>
       <!-- GroqShell -->
-      <div class="lab-card p-7 flex flex-col hover:scale-105 transition-all duration-300">
-        <i class="fas fa-terminal text-3xl text-purple-400"></i>
-        <h3 class="text-3xl font-bold mt-4 text-white">GroqShell ESP32‑S3</h3>
-        <p class="text-sm text-gray-400 mt-2"><span class="font-semibold text-white">The challenge:</span> Bring LLM intelligence to resource-constrained edge devices.</p>
-        <p class="text-sm text-gray-300 mt-1"><span class="font-semibold text-white">My approach:</span> I created a UART-based shell that connects to Groq's cloud API over TLS, streams prompts, and displays responses. The firmware handles JSON parsing with cJSON and multitasking with FreeRTOS.</p>
-        <div class="diagram-placeholder my-4 text-sm">
-          [UART] ⇄ [ESP32‑S3] ⇄ [Groq API (LLaMA 3.1)]
-        </div>
-        <p class="text-sm text-gray-300"><span class="font-semibold">Technologies:</span> ESP‑IDF, FreeRTOS, cJSON, TLS 1.2</p>
-        <p class="text-sm text-gray-300 mt-2"><span class="font-semibold">Results:</span> 200ms average inference latency, interactive AI debugger, <100kB RAM footprint. Open-sourced for embedded ML community.</p>
-        <div class="mt-4 flex gap-2">
-          <span class="chip-eng">Live demo</span>
-          <span class="chip-eng">GitHub</span>
+      <div class="lab-card p-6 flex flex-col hover:scale-105 transition-all duration-300">
+        <i class="fas fa-terminal text-2xl md:text-3xl text-purple-400"></i>
+        <h3 class="text-2xl md:text-3xl font-bold mt-3 text-white">GroqShell ESP32‑S3</h3>
+        <p class="text-xs md:text-sm text-gray-400 mt-2"><span class="font-semibold text-white">Challenge:</span> LLM on edge devices.</p>
+        <p class="text-xs md:text-sm text-gray-300 mt-1"><span class="font-semibold text-white">Approach:</span> UART shell to Groq API, TLS, cJSON.</p>
+        <div class="diagram-placeholder my-3 text-xs md:text-sm p-4">[UART] ⇄ [ESP32‑S3] ⇄ [Groq API]</div>
+        <p class="text-xs md:text-sm text-gray-300"><span class="font-semibold">Tech:</span> ESP‑IDF, FreeRTOS, cJSON, TLS</p>
+        <p class="text-xs md:text-sm text-gray-300 mt-2"><span class="font-semibold">Results:</span> 200ms latency, <100kB RAM.</p>
+        <div class="mt-3 flex gap-2">
+          <span class="chip-eng text-xs">Live demo</span>
+          <span class="chip-eng text-xs">GitHub</span>
         </div>
       </div>
       <!-- DSP Engine -->
-      <div class="lab-card p-7 flex flex-col hover:scale-105 transition-all duration-300">
-        <i class="fas fa-wave-square text-3xl text-amber-400"></i>
-        <h3 class="text-3xl font-bold mt-4 text-white">Cycle‑accurate DSP Engine</h3>
-        <p class="text-sm text-gray-400 mt-2"><span class="font-semibold text-white">The challenge:</span> Real-time filtering on an 8-bit MCU without floating-point hardware.</p>
-        <p class="text-sm text-gray-300 mt-1"><span class="font-semibold text-white">My approach:</span> I implemented an 8-tap FIR filter using Q15 fixed-point arithmetic, timer-triggered ADC sampling at 8kHz, and hand-optimized assembly loops for cycle counting.</p>
-        <div class="diagram-placeholder my-4 text-sm">
-          ADC ➔ Q15 ➔ 8‑tap FIR ➔ UART @ 115200
-        </div>
-        <p class="text-sm text-gray-300"><span class="font-semibold">Technologies:</span> ATmega2560, avr-gcc, custom linker script</p>
-        <p class="text-sm text-gray-300 mt-2"><span class="font-semibold">Results:</span> 78 cycles per tap, 8kHz sampling without missed samples. Filtered data streamed in real-time to Python for analysis.</p>
-        <div class="mt-4 flex gap-2">
-          <span class="chip-eng">GitHub</span>
-          <span class="chip-eng">Documentation</span>
+      <div class="lab-card p-6 flex flex-col hover:scale-105 transition-all duration-300">
+        <i class="fas fa-wave-square text-2xl md:text-3xl text-amber-400"></i>
+        <h3 class="text-2xl md:text-3xl font-bold mt-3 text-white">Cycle‑accurate DSP</h3>
+        <p class="text-xs md:text-sm text-gray-400 mt-2"><span class="font-semibold text-white">Challenge:</span> 8-bit real-time filtering.</p>
+        <p class="text-xs md:text-sm text-gray-300 mt-1"><span class="font-semibold text-white">Approach:</span> Q15 FIR, timer ADC, hand-optimized.</p>
+        <div class="diagram-placeholder my-3 text-xs md:text-sm p-4">ADC ➔ Q15 ➔ 8‑tap FIR ➔ UART</div>
+        <p class="text-xs md:text-sm text-gray-300"><span class="font-semibold">Tech:</span> ATmega2560, avr-gcc</p>
+        <p class="text-xs md:text-sm text-gray-300 mt-2"><span class="font-semibold">Results:</span> 78 cycles/tap, 8kHz sampling.</p>
+        <div class="mt-3 flex gap-2">
+          <span class="chip-eng text-xs">GitHub</span>
+          <span class="chip-eng text-xs">Docs</span>
         </div>
       </div>
     </div>
@@ -396,140 +455,131 @@ object-fit:cover;
 
   <!-- 4. RESEARCH FRONTIERS -->
   <section id="research" class="section-container">
-    <h2 class="text-5xl font-bold text-white mb-3">Research frontiers</h2>
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">Research frontiers</h2>
     <div class="tech-line"></div>
-    <div class="grid md:grid-cols-2 gap-8 mt-12">
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8 mt-8">
       <!-- FSO/THz -->
-      <div class="lab-card p-8">
-        <div class="flex justify-between"><h3 class="text-3xl font-bold">FSO & THz Communication</h3><span class="chip-eng">2025 – present</span></div>
-        <p class="text-gray-400 mt-1">with Dr. N. Vishwakarma</p>
-        <p class="text-gray-300 mt-3">I'm modeling atmospheric impairments for free‑space optics and terahertz links. Using MATLAB and custom simulators, I analyze BER, SNR, and ergodic capacity under fog, rain, and turbulence. This work targets 6G backhaul and last-mile connectivity.</p>
-        <div class="diagram-placeholder mt-5 text-sm">📊 BER vs distance (simulation) — 300 GHz</div>
-        <div class="flex gap-2 mt-4">
-          <span class="chip-eng">Preprint soon</span>
-          <span class="chip-eng">MATLAB</span>
-        </div>
+      <div class="lab-card p-7">
+        <div class="flex flex-wrap justify-between items-center gap-2"><h3 class="text-2xl md:text-3xl font-bold">FSO & THz</h3><span class="chip-eng">2025 – present</span></div>
+        <p class="text-xs md:text-sm text-gray-400 mt-1">with Dr. N. Vishwakarma</p>
+        <p class="text-sm md:text-base text-gray-300 mt-3">Modeling atmospheric impairments for terahertz links. BER, SNR, ergodic capacity under fog, rain.</p>
+        <div class="diagram-placeholder mt-4 text-sm p-4">📊 BER vs distance (300 GHz)</div>
       </div>
       <!-- TFET Biosensor -->
-      <div class="lab-card p-8">
-        <div class="flex justify-between"><h3 class="text-3xl font-bold">TFET Biosensor Simulation</h3><span class="chip-eng">2025 – present</span></div>
-        <p class="text-gray-400 mt-1">with Dr. Abhishek Ray</p>
-        <p class="text-gray-300 mt-3">I simulate vertical TFET structures in Silvaco TCAD, analyzing I<sub>D</sub>-V<sub>G</sub> characteristics, cutline potential, and sensitivity for biomolecule detection. My goal is to optimize subthreshold slope and ON/OFF ratio for label-free biosensing.</p>
-        <div class="diagram-placeholder mt-5 text-sm">⚡ Potential distribution · 10nm cavity</div>
-        <div class="flex gap-2 mt-4">
-          <span class="chip-eng">TCAD deck</span>
-          <span class="chip-eng">GitHub</span>
-        </div>
+      <div class="lab-card p-7">
+        <div class="flex flex-wrap justify-between items-center gap-2"><h3 class="text-2xl md:text-3xl font-bold">TFET Biosensor</h3><span class="chip-eng">2025 – present</span></div>
+        <p class="text-xs md:text-sm text-gray-400 mt-1">with Dr. Abhishek Ray</p>
+        <p class="text-sm md:text-base text-gray-300 mt-3">Silvaco TCAD simulation of vertical TFETs, I<sub>D</sub>-V<sub>G</sub>, sensitivity for biomolecule detection.</p>
+        <div class="diagram-placeholder mt-4 text-sm p-4">⚡ Potential distribution · 10nm cavity</div>
       </div>
     </div>
   </section>
 
-  <!-- 5. ENGINEERING TOOLKIT (dashboard style) -->
+  <!-- 5. ENGINEERING TOOLKIT -->
   <section id="toolkit" class="section-container">
-    <h2 class="text-5xl font-bold text-white mb-3">Engineering toolkit</h2>
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">Engineering toolkit</h2>
     <div class="tech-line"></div>
-    <div class="lab-card p-10 mt-10">
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="lab-card p-8 md:p-10 mt-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         <div>
-          <h3 class="text-xl font-semibold text-blue-300">Embedded Systems</h3>
-          <ul class="mt-3 space-y-2 text-gray-300">
+          <h3 class="text-lg md:text-xl font-semibold text-blue-300">Embedded</h3>
+          <ul class="mt-3 space-y-2 text-sm md:text-base text-gray-300">
             <li class="flex items-center gap-2"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>ATmega, ESP32, RPi</li>
             <li class="flex items-center gap-2"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>FreeRTOS, bare metal</li>
             <li class="flex items-center gap-2"><span class="w-2 h-2 bg-blue-500 rounded-full"></span>UART/SPI/I2C, timers</li>
           </ul>
         </div>
         <div>
-          <h3 class="text-xl font-semibold text-blue-300">Signal Processing</h3>
-          <ul class="mt-3 space-y-2 text-gray-300">
+          <h3 class="text-lg md:text-xl font-semibold text-blue-300">Signal Proc</h3>
+          <ul class="mt-3 space-y-2 text-sm md:text-base text-gray-300">
             <li class="flex items-center gap-2"><span class="w-2 h-2 bg-purple-500 rounded-full"></span>Q15, FIR, fixed‑point</li>
             <li class="flex items-center gap-2"><span class="w-2 h-2 bg-purple-500 rounded-full"></span>real‑time sampling</li>
             <li class="flex items-center gap-2"><span class="w-2 h-2 bg-purple-500 rounded-full"></span>cycle optimisation</li>
           </ul>
         </div>
         <div>
-          <h3 class="text-xl font-semibold text-blue-300">Wireless Communication</h3>
-          <ul class="mt-3 space-y-2 text-gray-300">
+          <h3 class="text-lg md:text-xl font-semibold text-blue-300">Wireless</h3>
+          <ul class="mt-3 space-y-2 text-sm md:text-base text-gray-300">
             <li class="flex items-center gap-2"><span class="w-2 h-2 bg-green-500 rounded-full"></span>LoRa 433MHz, Wi‑Fi</li>
             <li class="flex items-center gap-2"><span class="w-2 h-2 bg-green-500 rounded-full"></span>RF, TLS, REST APIs</li>
             <li class="flex items-center gap-2"><span class="w-2 h-2 bg-green-500 rounded-full"></span>IoT networking</li>
           </ul>
         </div>
         <div>
-          <h3 class="text-xl font-semibold text-blue-300">Simulation & Tools</h3>
-          <ul class="mt-3 space-y-2 text-gray-300">
+          <h3 class="text-lg md:text-xl font-semibold text-blue-300">Sim & Tools</h3>
+          <ul class="mt-3 space-y-2 text-sm md:text-base text-gray-300">
             <li class="flex items-center gap-2"><span class="w-2 h-2 bg-yellow-500 rounded-full"></span>MATLAB, Simulink</li>
             <li class="flex items-center gap-2"><span class="w-2 h-2 bg-yellow-500 rounded-full"></span>Silvaco TCAD, GNU Radio</li>
             <li class="flex items-center gap-2"><span class="w-2 h-2 bg-yellow-500 rounded-full"></span>Python, cJSON, Git</li>
           </ul>
         </div>
       </div>
-      <!-- capability meters (visual) -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-        <div><span class="text-sm text-gray-400">Embedded mastery</span><div class="meter-bar mt-1"><div class="meter-fill w-10/12"></div></div></div>
-        <div><span class="text-sm text-gray-400">DSP depth</span><div class="meter-bar mt-1"><div class="meter-fill w-9/12"></div></div></div>
-        <div><span class="text-sm text-gray-400">Wireless systems</span><div class="meter-bar mt-1"><div class="meter-fill w-8/12"></div></div></div>
-        <div><span class="text-sm text-gray-400">TCAD/Simulation</span><div class="meter-bar mt-1"><div class="meter-fill w-8/12"></div></div></div>
+      <!-- meters -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-10">
+        <div><span class="text-xs md:text-sm text-gray-400">Embedded</span><div class="meter-bar mt-1"><div class="meter-fill w-10/12"></div></div></div>
+        <div><span class="text-xs md:text-sm text-gray-400">DSP</span><div class="meter-bar mt-1"><div class="meter-fill w-9/12"></div></div></div>
+        <div><span class="text-xs md:text-sm text-gray-400">Wireless</span><div class="meter-bar mt-1"><div class="meter-fill w-8/12"></div></div></div>
+        <div><span class="text-xs md:text-sm text-gray-400">TCAD</span><div class="meter-bar mt-1"><div class="meter-fill w-8/12"></div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- 6. LAB ENVIRONMENT (visual hardware board) -->
+  <!-- 6. LAB ENVIRONMENT -->
   <section class="section-container">
-    <h2 class="text-5xl font-bold text-white mb-3">Lab environment</h2>
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-3">Lab environment</h2>
     <div class="tech-line"></div>
-    <div class="lab-card p-10 mt-8">
-      <div class="flex flex-wrap gap-4 justify-center">
-        <span class="chip-eng text-lg">ESP32</span><span class="chip-eng text-lg">ATmega2560</span><span class="chip-eng text-lg">FreeRTOS</span>
-        <span class="chip-eng text-lg">LoRa</span><span class="chip-eng text-lg">MATLAB</span><span class="chip-eng text-lg">Silvaco TCAD</span>
-        <span class="chip-eng text-lg">GNU Radio</span><span class="chip-eng text-lg">Python</span><span class="chip-eng text-lg">Git</span>
-        <span class="chip-eng text-lg">SolidWorks</span><span class="chip-eng text-lg">Proteus</span><span class="chip-eng text-lg">RPi</span>
+    <div class="lab-card p-8 mt-8">
+      <div class="flex flex-wrap gap-3 justify-center">
+        <span class="chip-eng text-sm md:text-lg">ESP32</span><span class="chip-eng text-sm md:text-lg">ATmega2560</span><span class="chip-eng text-sm md:text-lg">FreeRTOS</span>
+        <span class="chip-eng text-sm md:text-lg">LoRa</span><span class="chip-eng text-sm md:text-lg">MATLAB</span><span class="chip-eng text-sm md:text-lg">Silvaco TCAD</span>
+        <span class="chip-eng text-sm md:text-lg">GNU Radio</span><span class="chip-eng text-sm md:text-lg">Python</span><span class="chip-eng text-sm md:text-lg">Git</span>
+        <span class="chip-eng text-sm md:text-lg">SolidWorks</span><span class="chip-eng text-sm md:text-lg">Proteus</span><span class="chip-eng text-sm md:text-lg">RPi</span>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 text-center">
-        <div><i class="fas fa-microchip fa-3x text-blue-400"></i><p class="mt-2 text-sm">ESP32-S3</p></div>
-        <div><i class="fas fa-broadcast-tower fa-3x text-blue-400"></i><p class="mt-2 text-sm">LoRa 433MHz</p></div>
-        <div><i class="fas fa-chart-line fa-3x text-blue-400"></i><p class="mt-2 text-sm">GNU Radio</p></div>
-        <div><i class="fas fa-cube fa-3x text-blue-400"></i><p class="mt-2 text-sm">Silvaco TCAD</p></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-center">
+        <div><i class="fas fa-microchip fa-2x md:fa-3x text-blue-400"></i><p class="mt-2 text-xs md:text-sm">ESP32-S3</p></div>
+        <div><i class="fas fa-broadcast-tower fa-2x md:fa-3x text-blue-400"></i><p class="mt-2 text-xs md:text-sm">LoRa 433MHz</p></div>
+        <div><i class="fas fa-chart-line fa-2x md:fa-3x text-blue-400"></i><p class="mt-2 text-xs md:text-sm">GNU Radio</p></div>
+        <div><i class="fas fa-cube fa-2x md:fa-3x text-blue-400"></i><p class="mt-2 text-xs md:text-sm">Silvaco TCAD</p></div>
       </div>
     </div>
   </section>
 
   <!-- 7. FUTURE VISION -->
   <section id="future" class="section-container">
-    <div class="lab-card p-14 text-center max-w-4xl mx-auto">
-      <h2 class="text-5xl font-bold text-white mb-4">Future vision</h2>
-      <p class="text-2xl text-gray-300 leading-relaxed">
-        I'm obsessed with pushing embedded intelligence to the edge — from adaptive wireless MAC layers to ultra‑low‑power semiconductor devices. My next goal is to merge embedded systems with on-device ML and explore sub‑terahertz communication for 6G. I'm looking for roles where I can contribute to groundbreaking products and learn from the best.
+    <div class="lab-card p-8 md:p-14 text-center max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Future vision</h2>
+      <p class="text-lg md:text-2xl text-gray-300 leading-relaxed">
+        I'm obsessed with pushing embedded intelligence to the edge — from adaptive wireless MAC layers to ultra‑low‑power semiconductor devices. My next goal is to merge embedded systems with on-device ML and explore sub‑terahertz communication for 6G.
       </p>
-      <div class="flex justify-center gap-4 mt-10">
-        <span class="chip-eng text-base">Edge AI</span>
-        <span class="chip-eng text-base">6G wireless</span>
-        <span class="chip-eng text-base">Beyond‑CMOS devices</span>
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <span class="chip-eng text-sm md:text-base">Edge AI</span>
+        <span class="chip-eng text-sm md:text-base">6G wireless</span>
+        <span class="chip-eng text-sm md:text-base">Beyond‑CMOS</span>
       </div>
     </div>
   </section>
 
-  <!-- 8. CONTACT SECTION -->
+  <!-- 8. CONTACT -->
   <section class="section-container pt-0">
-    <div class="lab-card p-12 flex flex-col items-center">
-      <h2 class="text-4xl font-bold text-white mb-6">Let's connect</h2>
-      <p class="text-gray-300 mb-6 text-center max-w-md">
+    <div class="lab-card p-8 md:p-12 flex flex-col items-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Let's connect</h2>
+      <p class="text-sm md:text-base text-gray-300 mb-6 text-center max-w-md">
         I'm actively seeking internship and full-time opportunities in embedded systems, wireless, and semiconductor engineering.
       </p>
-      <div class="flex gap-8 text-4xl">
+      <div class="flex gap-6 md:gap-8 text-3xl md:text-4xl">
         <a href="https://github.com/Om-Bharti" class="text-gray-300 hover:text-blue-400 transition-all hover:scale-110"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/om-bharti-/" class="text-gray-300 hover:text-blue-400 transition-all hover:scale-110"><i class="fab fa-linkedin"></i></a>
         <a href="mailto:ombharti323@gmail.com" class="text-gray-300 hover:text-blue-400 transition-all hover:scale-110"><i class="fas fa-envelope"></i></a>
       </div>
-      <p class="text-gray-400 mt-8 text-sm">ombharti323@gmail.com</p>
+      <p class="text-gray-400 mt-6 text-sm">ombharti323@gmail.com</p>
     </div>
   </section>
 
   <!-- footer -->
-  <footer class="text-center text-gray-500 text-sm py-8 border-t border-[#1f2a36]">
-    <span>© Om Bharti — 2026</span>
+  <footer class="text-center text-gray-500 text-xs md:text-sm py-6 border-t border-[#1f2a36]">
+    <span>© Om Bharti — 2026 · PDEU · CGPA 8.18/10.0</span>
   </footer>
 
-  <!-- theme toggle script -->
   <script>
     function toggleTheme() {
       const body = document.body;
@@ -547,7 +597,7 @@ object-fit:cover;
       }
     }
 
-    // Add fade-in animation to sections as they appear
+    // Intersection Observer for fade-in
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -558,6 +608,13 @@ object-fit:cover;
 
     document.querySelectorAll('.section-container, .lab-card').forEach(el => {
       observer.observe(el);
+    });
+    
+    // ensure mobile tap works
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
     });
   </script>
 </body>
